@@ -27,6 +27,9 @@ Figure.prototype = {
 			}
 			return arr;
 		},
+		/*
+			找最大的三个数
+		*/
 		findMax3(){
 			var tempArr = [arr[0],arr[1],arr[2]];
 			for(var i=0;i<arr.length;i++){

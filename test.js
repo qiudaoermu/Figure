@@ -1,7 +1,8 @@
 /*
 编写可维护 高性能 易于拓展的代码
 */
-
+ let log = console.log;
+var arr = [1,3,4,1,23,41,22,13,3,18]
 function Figure(){
 
 }
@@ -54,13 +55,25 @@ Figure.prototype = {
 				}
 			}
 			return [t,v];
+		},
+		//生成范围内的随机数
+		generateRandomAarray(n,rangeL,rangeR){
+					if(rangeL>rangeR) return;
+					if(rangeR-rangeL<n) return;
+					let arr = [];
+					for(var i=0;i<n;i++){
+						var t = Math.floor(Math.random()*(rangeR-rangeL))+rangeL
+						arr.push(t)
+					}
+					return arr
 		}
 };
 
 var f = new Figure();
 log(f.factorial(5));
 log(f.bubbling(arr));
-log(findMax3(arr));
+log(f.findMax3(arr));
+log(f.generateRandomAarray(1000,1,900))
 
 
 
